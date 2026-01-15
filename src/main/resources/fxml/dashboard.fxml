@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.vertitrack.controller.DashboardController" styleClass="root">
+    
+    <!-- Top Menu Bar -->
+    <top>
+        <VBox>
+            <!-- Title Bar -->
+            <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="20">
+                <padding>
+                    <Insets top="20" right="30" bottom="20" left="30"/>
+                </padding>
+                <Label text="VertiTrack" styleClass="app-title">
+                    <font>
+                        <Font name="System Bold" size="28"/>
+                    </font>
+                </Label>
+                <Label text="Lift Maintenance &amp; Expense Management System" styleClass="app-subtitle">
+                    <font>
+                        <Font size="14"/>
+                    </font>
+                </Label>
+                <Region HBox.hgrow="ALWAYS"/>
+                <Button fx:id="refreshButton" text="🔄 Refresh Alerts" styleClass="btn-primary"/>
+            </HBox>
+            
+            <!-- Navigation Menu -->
+            <HBox styleClass="nav-bar" alignment="CENTER_LEFT" spacing="10">
+                <padding>
+                    <Insets top="10" right="20" bottom="10" left="20"/>
+                </padding>
+                <Button fx:id="manageLiftsButton" text="🏢 Manage Lifts" styleClass="btn-nav"/>
+                <Button fx:id="serviceRecordsButton" text="🔧 Service Records" styleClass="btn-nav"/>
+                <Button fx:id="expenseRecordsButton" text="💰 Expenses" styleClass="btn-nav"/>
+                <Button fx:id="manageEmployeesButton" text="👥 Employees" styleClass="btn-nav"/>
+                <Button fx:id="attendanceButton" text="📋 Attendance" styleClass="btn-nav"/>
+                <Button fx:id="reportsButton" text="📊 Reports" styleClass="btn-nav"/>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <!-- Center Content -->
+    <center>
+        <VBox spacing="20" styleClass="content-area">
+            <padding>
+                <Insets top="20" right="30" bottom="20" left="30"/>
+            </padding>
+            
+            <!-- Statistics Cards -->
+            <HBox spacing="20" alignment="CENTER">
+                <!-- Total Lifts Card -->
+                <VBox styleClass="stats-card" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="Total Lifts" styleClass="stats-label">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="totalLiftsLabel" text="0" styleClass="stats-value">
+                        <font>
+                            <Font name="System Bold" size="36"/>
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <!-- Active Lifts Card -->
+                <VBox styleClass="stats-card" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="Active Lifts" styleClass="stats-label">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="activeLiftsLabel" text="0" styleClass="stats-value">
+                        <font>
+                            <Font name="System Bold" size="36"/>
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <!-- Total Employees Card -->
+                <VBox styleClass="stats-card" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="Active Employees" styleClass="stats-label">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="totalEmployeesLabel" text="0" styleClass="stats-value">
+                        <font>
+                            <Font name="System Bold" size="36"/>
+                        </font>
+                    </Label>
+                </VBox>
+                
+                <!-- Monthly Expenses Card -->
+                <VBox styleClass="stats-card" alignment="CENTER" spacing="10" HBox.hgrow="ALWAYS">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    <Label text="This Month Expenses" styleClass="stats-label">
+                        <font>
+                            <Font size="14"/>
+                        </font>
+                    </Label>
+                    <Label fx:id="monthlyExpensesLabel" text="₹ 0.00" styleClass="stats-value">
+                        <font>
+                            <Font name="System Bold" size="32"/>
+                        </font>
+                    </Label>
+                </VBox>
+            </HBox>
+            
+            <!-- Alerts Section -->
+            <VBox spacing="10" VBox.vgrow="ALWAYS">
+                <Label text="⚠️ Alerts &amp; Reminders" styleClass="section-title">
+                    <font>
+                        <Font name="System Bold" size="20"/>
+                    </font>
+                </Label>
+                
+                <TableView fx:id="alertsTable" VBox.vgrow="ALWAYS" styleClass="alert-table">
+                    <columns>
+                        <TableColumn fx:id="priorityColumn" text="Priority" prefWidth="80"/>
+                        <TableColumn fx:id="typeColumn" text="Type" prefWidth="120"/>
+                        <TableColumn fx:id="titleColumn" text="Title" prefWidth="200"/>
+                        <TableColumn fx:id="messageColumn" text="Message" prefWidth="400"/>
+                        <TableColumn fx:id="dateColumn" text="Date" prefWidth="100"/>
+                    </columns>
+                    <placeholder>
+                        <Label text="No alerts at the moment. Great job! 👍"/>
+                    </placeholder>
+                </TableView>
+                
+                <Label text="💡 Tip: Right-click on alerts to mark as read or dismiss" styleClass="tip-label">
+                    <font>
+                        <Font size="11" />
+                    </font>
+                </Label>
+            </VBox>
+        </VBox>
+    </center>
+    
+    <!-- Bottom Status Bar -->
+    <bottom>
+        <HBox styleClass="status-bar" alignment="CENTER_LEFT" spacing="20">
+            <padding>
+                <Insets top="10" right="20" bottom="10" left="20"/>
+            </padding>
+            <Label text="VertiTrack v1.0" styleClass="status-text"/>
+            <Region HBox.hgrow="ALWAYS"/>
+            <Label text="Ready" styleClass="status-text"/>
+        </HBox>
+    </bottom>
+    
+</BorderPane>

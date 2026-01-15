@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.Font?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17" xmlns:fx="http://javafx.com/fxml/1" 
+            fx:controller="com.vertitrack.controller.LiftController" styleClass="root">
+    
+    <top>
+        <VBox>
+            <HBox styleClass="title-bar" alignment="CENTER_LEFT" spacing="20">
+                <padding>
+                    <Insets top="15" right="20" bottom="15" left="20"/>
+                </padding>
+                <Label text="🏢 Lift Management" styleClass="page-title">
+                    <font>
+                        <Font name="System Bold" size="22"/>
+                    </font>
+                </Label>
+            </HBox>
+        </VBox>
+    </top>
+    
+    <center>
+        <SplitPane dividerPositions="0.45" VBox.vgrow="ALWAYS">
+            
+            <!-- Left: Form -->
+            <ScrollPane fitToWidth="true" styleClass="form-scroll">
+                <VBox spacing="15" styleClass="form-container">
+                    <padding>
+                        <Insets top="20" right="20" bottom="20" left="20"/>
+                    </padding>
+                    
+                    <!-- Basic Information -->
+                    <Label text="Basic Information" styleClass="section-header">
+                        <font>
+                            <Font name="System Bold" size="16"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+                        
+                        <Label text="Lift Number:" GridPane.rowIndex="0"/>
+                        <TextField fx:id="liftNumberField" promptText="e.g., LIFT-001" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Location:" GridPane.rowIndex="1"/>
+                        <TextField fx:id="locationField" promptText="e.g., Building A, Floor 5" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Building:" GridPane.rowIndex="2"/>
+                        <TextField fx:id="buildingField" promptText="e.g., Main Office" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                        
+                        <Label text="Lift Type:" GridPane.rowIndex="3"/>
+                        <TextField fx:id="liftTypeField" promptText="e.g., Passenger, Freight" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                        
+                        <Label text="Capacity:" GridPane.rowIndex="4"/>
+                        <TextField fx:id="capacityField" promptText="e.g., 8 persons or 630 kg" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                        
+                        <Label text="Floors:" GridPane.rowIndex="5"/>
+                        <TextField fx:id="floorsField" promptText="e.g., 10" GridPane.columnIndex="1" GridPane.rowIndex="5"/>
+                        
+                        <Label text="Manufacturer:" GridPane.rowIndex="6"/>
+                        <TextField fx:id="manufacturerField" promptText="e.g., Otis, Schindler" GridPane.columnIndex="1" GridPane.rowIndex="6"/>
+                        
+                        <Label text="Model:" GridPane.rowIndex="7"/>
+                        <TextField fx:id="modelField" promptText="e.g., Gen2-MRL" GridPane.columnIndex="1" GridPane.rowIndex="7"/>
+                    </GridPane>
+                    
+                    <Separator/>
+                    
+                    <!-- AMC Details -->
+                    <Label text="AMC Details" styleClass="section-header">
+                        <font>
+                            <Font name="System Bold" size="16"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+                        
+                        <Label text="AMC Start Date:" GridPane.rowIndex="0"/>
+                        <DatePicker fx:id="amcStartDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
+                        
+                        <Label text="AMC End Date:" GridPane.rowIndex="1"/>
+                        <DatePicker fx:id="amcEndDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity"/>
+                        
+                        <Label text="AMC Renewal Date:" GridPane.rowIndex="2"/>
+                        <DatePicker fx:id="amcRenewalDatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity"/>
+                        
+                        <Label text="AMC Amount (₹):" GridPane.rowIndex="3"/>
+                        <TextField fx:id="amcAmountField" promptText="e.g., 50000" GridPane.columnIndex="1" GridPane.rowIndex="3"/>
+                    </GridPane>
+                    
+                    <Separator/>
+                    
+                    <!-- Quarterly Payment Dates -->
+                    <Label text="Quarterly Payment Dates" styleClass="section-header">
+                        <font>
+                            <Font name="System Bold" size="16"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+                        
+                        <Label text="Quarter 1 Date:" GridPane.rowIndex="0"/>
+                        <DatePicker fx:id="quarter1DatePicker" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
+                        
+                        <Label text="Quarter 2 Date:" GridPane.rowIndex="1"/>
+                        <DatePicker fx:id="quarter2DatePicker" GridPane.columnIndex="1" GridPane.rowIndex="1" maxWidth="Infinity"/>
+                        
+                        <Label text="Quarter 3 Date:" GridPane.rowIndex="2"/>
+                        <DatePicker fx:id="quarter3DatePicker" GridPane.columnIndex="1" GridPane.rowIndex="2" maxWidth="Infinity"/>
+                        
+                        <Label text="Quarter 4 Date:" GridPane.rowIndex="3"/>
+                        <DatePicker fx:id="quarter4DatePicker" GridPane.columnIndex="1" GridPane.rowIndex="3" maxWidth="Infinity"/>
+                        
+                        <Label text="Quarterly Amount (₹):" GridPane.rowIndex="4"/>
+                        <TextField fx:id="quarterlyAmountField" promptText="e.g., 12500" GridPane.columnIndex="1" GridPane.rowIndex="4"/>
+                    </GridPane>
+                    
+                    <Separator/>
+                    
+                    <!-- Contractor Details -->
+                    <Label text="Contractor Details" styleClass="section-header">
+                        <font>
+                            <Font name="System Bold" size="16"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+                        
+                        <Label text="Contractor Name:" GridPane.rowIndex="0"/>
+                        <TextField fx:id="contractorNameField" promptText="Company/Person Name" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+                        
+                        <Label text="Contact Number:" GridPane.rowIndex="1"/>
+                        <TextField fx:id="contractorContactField" promptText="Phone Number" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+                        
+                        <Label text="Email:" GridPane.rowIndex="2"/>
+                        <TextField fx:id="contractorEmailField" promptText="Email Address" GridPane.columnIndex="1" GridPane.rowIndex="2"/>
+                    </GridPane>
+                    
+                    <Separator/>
+                    
+                    <!-- Status and Notes -->
+                    <Label text="Status &amp; Notes" styleClass="section-header">
+                        <font>
+                            <Font name="System Bold" size="16"/>
+                        </font>
+                    </Label>
+                    
+                    <GridPane hgap="10" vgap="12">
+                        <columnConstraints>
+                            <ColumnConstraints percentWidth="35"/>
+                            <ColumnConstraints percentWidth="65"/>
+                        </columnConstraints>
+                        
+                        <Label text="Status:" GridPane.rowIndex="0"/>
+                        <ComboBox fx:id="statusComboBox" GridPane.columnIndex="1" GridPane.rowIndex="0" maxWidth="Infinity"/>
+                        
+                        <Label text="Notes:" GridPane.rowIndex="1"/>
+                        <TextArea fx:id="notesArea" promptText="Additional notes..." GridPane.columnIndex="1" GridPane.rowIndex="1" 
+                                  prefRowCount="3" wrapText="true"/>
+                    </GridPane>
+                    
+                    <!-- Action Buttons -->
+                    <HBox spacing="10" alignment="CENTER">
+                        <padding>
+                            <Insets top="20"/>
+                        </padding>
+                        <Button fx:id="saveButton" text="💾 Save Lift" styleClass="btn-primary" prefWidth="120"/>
+                        <Button fx:id="clearButton" text="🔄 Clear Form" styleClass="btn-secondary" prefWidth="120"/>
+                        <Button fx:id="deleteButton" text="🗑️ Delete" styleClass="btn-danger" prefWidth="120"/>
+                    </HBox>
+                </VBox>
+            </ScrollPane>
+            
+            <!-- Right: Table -->
+            <VBox spacing="10">
+                <padding>
+                    <Insets top="20" right="20" bottom="20" left="20"/>
+                </padding>
+                
+                <Label text="All Lifts" styleClass="section-header">
+                    <font>
+                        <Font name="System Bold" size="16"/>
+                    </font>
+                </Label>
+                
+                <TextField fx:id="searchField" promptText="🔍 Search lifts..." styleClass="search-field"/>
+                
+                <TableView fx:id="liftsTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn fx:id="liftNumberColumn" text="Lift #" prefWidth="80"/>
+                        <TableColumn fx:id="locationColumn" text="Location" prefWidth="150"/>
+                        <TableColumn fx:id="buildingColumn" text="Building" prefWidth="120"/>
+                        <TableColumn fx:id="amcEndDateColumn" text="AMC End" prefWidth="100"/>
+                        <TableColumn fx:id="statusColumn" text="Status" prefWidth="80"/>
+                    </columns>
+                    <placeholder>
+                        <Label text="No lifts added yet"/>
+                    </placeholder>
+                </TableView>
+            </VBox>
+            
+        </SplitPane>
+    </center>
+    
+</BorderPane>

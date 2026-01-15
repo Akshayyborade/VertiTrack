@@ -1,0 +1,413 @@
+/* ===================================
+   VertiTrack - Modern CSS Stylesheet
+   =================================== */
+
+/* Root Styling */
+.root {
+    -fx-font-family: "Segoe UI", "Arial", sans-serif;
+    -fx-font-size: 13px;
+    -fx-background-color: #f5f7fa;
+}
+
+/* ===================================
+   Title Bar & Navigation
+   =================================== */
+
+.title-bar {
+    -fx-background-color: linear-gradient(to right, #2c3e50, #34495e);
+    -fx-text-fill: white;
+}
+
+.app-title {
+    -fx-text-fill: #ecf0f1;
+    -fx-font-weight: bold;
+}
+
+.app-subtitle {
+    -fx-text-fill: #bdc3c7;
+}
+
+.nav-bar {
+    -fx-background-color: #34495e;
+    -fx-border-color: #2c3e50;
+    -fx-border-width: 0 0 2 0;
+}
+
+.btn-nav {
+    -fx-background-color: transparent;
+    -fx-text-fill: #ecf0f1;
+    -fx-font-size: 13px;
+    -fx-padding: 8 16 8 16;
+    -fx-cursor: hand;
+    -fx-background-radius: 5;
+}
+
+.btn-nav:hover {
+    -fx-background-color: #2c3e50;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.btn-nav:pressed {
+    -fx-background-color: #1a252f;
+}
+
+/* ===================================
+   Buttons
+   =================================== */
+
+.btn-primary {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-primary:hover {
+    -fx-background-color: #2980b9;
+    -fx-scale-x: 1.05;
+    -fx-scale-y: 1.05;
+}
+
+.btn-primary:pressed {
+    -fx-background-color: #21618c;
+}
+
+.btn-secondary {
+    -fx-background-color: #95a5a6;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-secondary:hover {
+    -fx-background-color: #7f8c8d;
+}
+
+.btn-danger {
+    -fx-background-color: #e74c3c;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 20 10 20;
+    -fx-background-radius: 5;
+    -fx-cursor: hand;
+}
+
+.btn-danger:hover {
+    -fx-background-color: #c0392b;
+}
+
+/* ===================================
+   Statistics Cards
+   =================================== */
+
+.stats-card {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 10, 0, 0, 2);
+    -fx-border-radius: 10;
+    -fx-border-color: #e1e8ed;
+    -fx-border-width: 1;
+}
+
+.stats-card:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 15, 0, 0, 3);
+    -fx-scale-x: 1.02;
+    -fx-scale-y: 1.02;
+}
+
+.stats-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-weight: normal;
+}
+
+.stats-value {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+/* ===================================
+   Content Area
+   =================================== */
+
+.content-area {
+    -fx-background-color: #f5f7fa;
+}
+
+.section-title {
+    -fx-text-fill: #2c3e50;
+    -fx-font-weight: bold;
+}
+
+.section-header {
+    -fx-text-fill: #34495e;
+    -fx-font-weight: bold;
+}
+
+.page-title {
+    -fx-text-fill: #ecf0f1;
+}
+
+/* ===================================
+   Tables
+   =================================== */
+
+.table-view {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-border-radius: 8;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.1), 8, 0, 0, 2);
+}
+
+.table-view .column-header-background {
+    -fx-background-color: #34495e;
+}
+
+.table-view .column-header {
+    -fx-background-color: #34495e;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-padding: 10 5 10 5;
+}
+
+.table-view .column-header .label {
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.table-view .table-cell {
+    -fx-padding: 8 5 8 5;
+    -fx-border-color: #ecf0f1;
+}
+
+.table-row-cell {
+    -fx-background-color: white;
+}
+
+.table-row-cell:odd {
+    -fx-background-color: #f8f9fa;
+}
+
+.table-row-cell:selected {
+    -fx-background-color: #3498db;
+    -fx-text-fill: white;
+}
+
+.table-row-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+.alert-table .table-row-cell:hover {
+    -fx-background-color: #fff3cd;
+}
+
+/* ===================================
+   Form Elements
+   =================================== */
+
+.text-field, .text-area, .combo-box, .date-picker {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-border-color: #cbd5e0;
+    -fx-border-radius: 5;
+    -fx-border-width: 1;
+    -fx-padding: 8;
+}
+
+.text-field:focused, .text-area:focused, .combo-box:focused, .date-picker:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+    -fx-effect: dropshadow(gaussian, rgba(52, 152, 219, 0.3), 8, 0, 0, 0);
+}
+
+.search-field {
+    -fx-background-color: white;
+    -fx-background-radius: 20;
+    -fx-border-color: #cbd5e0;
+    -fx-border-radius: 20;
+    -fx-border-width: 1;
+    -fx-padding: 10 15 10 15;
+    -fx-font-size: 13px;
+}
+
+.search-field:focused {
+    -fx-border-color: #3498db;
+    -fx-border-width: 2;
+}
+
+.label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ===================================
+   Form Container
+   =================================== */
+
+.form-container {
+    -fx-background-color: white;
+    -fx-background-radius: 8;
+    -fx-padding: 20;
+}
+
+.form-scroll {
+    -fx-background-color: transparent;
+}
+
+.form-scroll .viewport {
+    -fx-background-color: transparent;
+}
+
+/* ===================================
+   Separator
+   =================================== */
+
+.separator {
+    -fx-padding: 10 0 10 0;
+}
+
+.separator .line {
+    -fx-border-color: #e1e8ed;
+    -fx-border-width: 1 0 0 0;
+}
+
+/* ===================================
+   Status Bar
+   =================================== */
+
+.status-bar {
+    -fx-background-color: #ecf0f1;
+    -fx-border-color: #bdc3c7;
+    -fx-border-width: 1 0 0 0;
+}
+
+.status-text {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-size: 11px;
+}
+
+/* ===================================
+   Tooltips & Utility
+   =================================== */
+
+.tip-label {
+    -fx-text-fill: #7f8c8d;
+    -fx-font-style: italic;
+}
+
+.tooltip {
+    -fx-background-color: #2c3e50;
+    -fx-text-fill: white;
+    -fx-background-radius: 5;
+    -fx-padding: 8;
+    -fx-font-size: 12px;
+}
+
+/* ===================================
+   Scroll Bars
+   =================================== */
+
+.scroll-bar {
+    -fx-background-color: transparent;
+}
+
+.scroll-bar .thumb {
+    -fx-background-color: #cbd5e0;
+    -fx-background-radius: 5;
+}
+
+.scroll-bar .thumb:hover {
+    -fx-background-color: #a0aec0;
+}
+
+.scroll-bar .track {
+    -fx-background-color: #f7fafc;
+}
+
+/* ===================================
+   Split Pane
+   =================================== */
+
+.split-pane {
+    -fx-background-color: #f5f7fa;
+}
+
+.split-pane .split-pane-divider {
+    -fx-background-color: #cbd5e0;
+    -fx-padding: 0 1 0 1;
+}
+
+/* ===================================
+   Context Menu
+   =================================== */
+
+.context-menu {
+    -fx-background-color: white;
+    -fx-background-radius: 5;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.menu-item {
+    -fx-padding: 8 15 8 15;
+}
+
+.menu-item:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+.menu-item .label {
+    -fx-text-fill: #2c3e50;
+}
+
+/* ===================================
+   Alert Dialog Customization
+   =================================== */
+
+.dialog-pane {
+    -fx-background-color: white;
+    -fx-background-radius: 10;
+}
+
+.dialog-pane .header-panel {
+    -fx-background-color: #3498db;
+    -fx-background-radius: 10 10 0 0;
+}
+
+.dialog-pane .content {
+    -fx-padding: 20;
+}
+
+/* ===================================
+   Combo Box
+   =================================== */
+
+.combo-box-popup .list-view {
+    -fx-background-color: white;
+    -fx-border-color: #cbd5e0;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 10, 0, 0, 2);
+}
+
+.combo-box-popup .list-cell {
+    -fx-padding: 8 10 8 10;
+}
+
+.combo-box-popup .list-cell:hover {
+    -fx-background-color: #e3f2fd;
+}
+
+/* ===================================
+   Responsive Adjustments
+   =================================== */
+
+@media screen and (max-width: 1024px) {
+    .stats-card {
+        -fx-padding: 15;
+    }
+    
+    .stats-value {
+        -fx-font-size: 28px;
+    }
+}
